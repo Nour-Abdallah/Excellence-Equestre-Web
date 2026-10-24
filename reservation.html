@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservations | Écuries Belle-Rivière</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========== VARIABLES CSS ========== */
+        :root {
+            --primary: #6D4C41; /* Brun principal */
+            --primary-light: #D7CCC8;
+            --primary-dark: #3E2723;
+            --secondary: #8D6E63;
+            --accent: #A1887F;
+            --text: #3E2723;
+            --text-light: #5D4037;
+            --light: #EFEBE9;
+            --white: #FFFFFF;
+            --success: #2E7D32; /* Vert */
+            --error: #C62828; /* Rouge */
+            --info: #0277BD; /* Bleu */
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+            --border-radius: 8px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* ========== RÉINITIALISATION ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: #F9F6F4;
+            line-height: 1.6;
+        }
+
+        /* ========== STRUCTURE PRINCIPALE ========== */
+        .equestrian-booking-system {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        /* ========== EN-TÊTE ========== */
+        .booking-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            margin-right: 0.8rem;
+            color: var(--primary-light);
+        }
+
+        .logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .booking-header h1 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* ========== NAVIGATION DU CALENDRIER ========== */
+        .calendar-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .month-display {
+            text-align: center;
+        }
+
+        .month-display h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .week-range {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .nav-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ========== JOURS DE LA SEMAINE ========== */
+        .weekdays-header {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: var(--primary-light);
+            color: var(--white);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .weekday {
+            padding: 0.8rem 0.5rem;
+            position: relative;
+        }
+
+        .date {
+            font-weight: 400;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 0.2rem;
+        }
+
+        /* ========== GRILLE DES CRÉNEAUX ========== */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background-color: var(--secondary);
+        }
+
+        .day-cell {
+            min-height: 180px;
+            background-color: var(--white);
+            padding: 0.5rem;
+            position: relative;
+        }
+
+        .date-number {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .time-slots {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        /* ========== STYLES DES CRÉNEAUX ========== */
+        .time-slot {
+            border-left: 4px solid var(--primary-light);
+            padding: 0.8rem;
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .time-slot:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .time-slot.available {
+            border-left-color: var(--success);
+        }
+
+        .time-slot.full {
+            border-left-color: var(--error);
+            opacity: 0.7;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .time i {
+            font-size: 0.7rem;
+        }
+
+        .activity {
+            font-weight: 600;
+            margin: 0.3rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .instructor {
+            font-size: 0.8rem;
+            color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .availability {
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-slot.available .availability {
+            color: var(--success);
+        }
+
+        .time-slot.full .availability {
+            color: var(--error);
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 0.4rem;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--primary);
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .book-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .book-btn:disabled {
+            background-color: var(--secondary);
+            cursor: not-allowed;
+        }
+
+        /* ========== PIED DE PAGE ========== */
+        .booking-footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin: 0.5rem;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-light);
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--primary-light);
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            padding-top: 1rem;
+            border-top: 1px solid var(--primary);
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* ========== MODAL DE RÉSERVATION ========== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 500px;
+            box-shadow: var(--shadow-lg);
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        .modal-header h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .booking-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid var(--primary-light);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--success);
+            color: var(--white);
+        }
+
+        /* ========== DESIGN RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .weekdays-header {
+                display: none;
+            }
+            
+            .day-cell {
+                border-bottom: 1px solid var(--primary-light);
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .modal-container {
+                width: 95%;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar-controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="equestrian-booking-system">
+        <!-- En-tête -->
+        <header class="booking-header">
+            <div class="logo">
+                <i class="fas fa-horse-head"></i>
+                <span>Écuries Belle-Rivière</span>
+            </div>
+            <h1>Réservation de séances équestres</h1>
+        </header>
+
+        <!-- Contrôles du calendrier -->
+        <section class="calendar-controls">
+            <button class="nav-btn prev-month">
+                <i class="fas fa-chevron-left"></i>
+                <span>Mois précédent</span>
+            </button>
+            
+            <div class="month-display">
+                <h2>Juillet 2025</h2>
+                <div class="week-range">Semaine du 10 au 16 Juillet</div>
+            </div>
+            
+            <button class="nav-btn next-month">
+                <span>Mois suivant</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- En-tête des jours -->
+        <div class="weekdays-header">
+            <div class="weekday">Lundi<div class="date">10</div></div>
+            <div class="weekday">Mardi<div class="date">11</div></div>
+            <div class="weekday">Mercredi<div class="date">12</div></div>
+            <div class="weekday">Jeudi<div class="date">13</div></div>
+            <div class="weekday">Vendredi<div class="date">14</div></div>
+            <div class="weekday">Samedi<div class="date">15</div></div>
+            <div class="weekday">Dimanche<div class="date">16</div></div>
+        </div>
+
+        <!-- Grille du calendrier -->
+        <div class="calendar-grid">
+            <!-- Lundi -->
+            <div class="day-cell">
+                <div class="time-slots">
+                    <div class="time-slot available">
+                        <div class="time"><i class="far fa-clock"></i> 09:00 - 10:30</div>
+                        <div class="activity">Dressage</div>
+                        <div class="instructor"><i class="fas fa-user-tie"></i> Abdallah Nour</div>
+                        <div class="availability">3 places disponibles</div>
+                        <button class="book-btn">Réserver</button>
+                    </div>
+                    <div class="time-slot available">
+                        <div class="time"><i class="far fa-clock"></i> 11:00 - 12:30</div>
+                        <div class="activity">Saut d'obstacles</div>
+                        <div class="instructor"><i class="fas fa-user-tie"></i> Badraoui Eya</div>
+                        <div class="availability">1 place disponible</div>
+                        <button class="book-btn">Réserver</button>
+                    </div>
+                    <div class="time-slot full">
+                        <div class="time"><i class="far fa-clock"></i> 14:00 - 15:30</div>
+                        <div class="activity">Balade en forêt</div>
+                        <div class="instructor"><i class="fas fa-user-tie"></i> El Ajmi Ranim</div>
+                        <div class="availability">Complet</div>
+                        <button class="book-btn" disabled>Complet</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mardi -->
+            <div class="day-cell">
+                <div class="time-slots">
+                    <div class="time-slot available">
+                        <div class="time"><i class="far fa-clock"></i> 10:00 - 11:30</div>
+                        <div class="activity">Dressage</div>
+                        <div class="instructor"><i class="fas fa-user-tie"></i>Abdallah Nour</div>
+                        <div class="availability">2 places disponibles</div>
+                        <button class="book-btn">Réserver</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mercredi à Dimanche -->
+            <div class="day-cell empty">
+                <div class="no-availability">Aucune séance programmée</div>
+            </div>
+            <div class="day-cell empty">
+                <div class="no-availability">Aucune séance programmée</div>
+            </div>
+            <div class="day-cell empty">
+                <div class="no-availability">Aucune séance programmée</div>
+            </div>
+            <div class="day-cell empty">
+                <div class="no-availability">Aucune séance programmée</div>
+            </div>
+            <div class="day-cell empty">
+                <div class="no-availability">Aucune séance programmée</div>
+            </div>
+        </div>
+
+        <!-- Pied de page -->
+        <footer class="booking-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rue de l'Indépendance, 5000 Monastir</p>
+                    <p><i class="fas fa-phone"></i>  +216 55 555 555</p>
+                    <p><i class="fas fa-envelope"></i> a_dos_de_reve@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Lundi-Vendredi: 9h-18h</p>
+                    <p>Samedi: 9h-12h</p>
+                    <p>Dimanche: Fermé</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Réseaux sociaux</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Écuries Belle-Rivière. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de réservation (masqué par défaut) -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-container">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2>Confirmer votre réservation</h2>
+                <div class="booking-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Activité:</span>
+                        <span class="detail-value" id="modal-activity">Dressage</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value" id="modal-date">Lundi 10 Juillet 2023</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Horaire:</span>
+                        <span class="detail-value" id="modal-time">09:00 - 10:30</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Moniteur:</span>
+                        <span class="detail-value" id="modal-instructor">Abdallah Nour</span>
+                    </div>
+                </div>
+            </div>
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="horse-select">Choix du cheval</label>
+                    <select id="horse-select" class="form-control">
+                        <option value="">-- Sélectionnez un cheval --</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="tempest">Tempête</option>
+                        <option value="echo">Écho</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="special-requests">Demandes spéciales</label>
+                    <textarea id="special-requests" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary cancel-btn">Annuler</button>
+                    <button type="submit" class="btn btn-primary confirm-btn">Confirmer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Script pour gérer les interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ouvrir le modal de réservation
+            const bookButtons = document.querySelectorAll('.book-btn:not(:disabled)');
+            bookButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const timeSlot = this.closest('.time-slot');
+                    document.getElementById('modal-activity').textContent = timeSlot.querySelector('.activity').textContent;
+                    document.getElementById('modal-time').textContent = timeSlot.querySelector('.time').textContent.replace('⏱', '').trim();
+                    document.getElementById('modal-instructor').textContent = timeSlot.querySelector('.instructor').textContent;
+                    
+                    const day = this.closest('.day-cell').querySelector('.date-number').textContent;
+                    const weekday = this.closest('.day-cell').querySelector('.weekday').textContent;
+                    document.getElementById('modal-date').textContent = `${weekday} ${day} Juillet 2023`;
+                    
+                    document.getElementById('bookingModal').classList.add('active');
+                });
+            });
+
+            // Fermer le modal
+            document.querySelector('.close-modal').addEventListener('click', function() {
+                document.getElementById('bookingModal').classList.remove('active');
+            });
+
+            document.querySelector('.cancel-btn').addEventListener('click', function() {
+                document.getElementById('bookingModal').classList.remove('active');
+            });
+
+            // Gérer la soumission du formulaire
+            document.querySelector('.booking-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Réservation confirmée!');
+                document.getElementById('bookingModal').classList.remove('active');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>

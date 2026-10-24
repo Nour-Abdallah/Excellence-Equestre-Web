@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notre Équipe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        /* ----- RESET DE BASE ----- */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+    
+        body {
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f7f5f0;
+          color: #2f2f2f;
+        }
+    
+        /* ----- HEADER / NAVBAR ----- */
+        .header {
+          background-color: #fff;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+          padding: 1rem 2rem;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+        }
+    
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+    
+        .logo img {
+          height: 50px;
+          width: auto;
+        }
+    
+        .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 2rem;
+        }
+    
+        .nav-links a {
+          text-decoration: none;
+          color: #2e2e2e;
+          font-weight: 500;
+          font-size: 1rem;
+          position: relative;
+          transition: color 0.3s ease;
+        }
+    
+        .nav-links a::after {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          left: 0;
+          bottom: -5px;
+          background-color: #7f5539;
+          transition: width 0.3s ease;
+        }
+    
+        .nav-links a:hover {
+          color: #7f5539;
+        }
+    
+        .nav-links a:hover::after {
+          width: 100%;
+        }
+    
+        /* ----- MAIN CONTACT ----- */
+        .contact-page {
+          padding: 4rem 2rem;
+        }
+    
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+    
+        .section-title {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          text-align: center;
+          color: #4b3f2f;
+        }
+    
+        .section-subtitle {
+          text-align: center;
+          margin-bottom: 2rem;
+          color: #666;
+        }
+    
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+    
+        .contact-form input,
+        .contact-form textarea {
+          padding: 0.75rem;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 1rem;
+          width: 100%;
+        }
+    
+        .btn-primary {
+          background-color: #7f5539;
+          color: white;
+          padding: 0.75rem;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+    
+        .btn-primary:hover {
+          background-color: #5c3d2e;
+        }
+    
+        .contact-info {
+          text-align: center;
+          font-size: 1rem;
+        }
+    
+        .contact-info p {
+          margin: 0.5rem 0;
+        }
+    
+        .contact-info i {
+          margin-right: 0.5rem;
+          color: #7f5539;
+        }
+    
+        /* ----- FOOTER ----- */
+        .footer {
+          background-color: #e8e3d8;
+          text-align: center;
+          padding: 1rem;
+          font-size: 0.9rem;
+          color: #4b3f2f;
+          margin-top: 3rem;
+        }
+      </style>
+    </head>
+    <body>
+    
+      <header class="header">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+          </a>
+          <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="reservation.html">Réservation</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <main>
+        <section class="team-page section-padding">
+            <div class="container">
+                <h1 class="section-title">Rencontrez notre équipe</h1>
+                <p class="section-subtitle">Des passionnés au service de votre expérience équestre</p>
+
+                <div class="team-grid">
+                    <!-- Membre 1 -->
+                    <div class="team-member">
+                        <img src="habib.jpg" alt="Habib Ammar" />
+                        <h3>Habib Ammar</h3>
+                        <p class="role">Directeur technique • BEES 2°</p>
+                        <p>30 ans d'expérience dans l'encadrement et la formation de cavaliers tous niveaux. Il dirige le club avec passion.</p>
+                    </div>
+
+                    <!-- Membre 2 -->
+                    <div class="team-member">
+                        <img src="slah.jpg" alt="M. Slaheddine Bali" />
+                        <h3>M. Slaheddine Bali</h3>
+                        <p class="role">Monitrice diplômée • </p>
+                        <p>Spécialiste du défense , Slaheddine a formé plusieurs champions régionaux. </p>
+                    </div>
+
+                    <!-- Membre 3 -->
+                    <div class="team-member">
+                        <img src="mphamed.jpg" alt="Mohamed Saïd El Kateb" />
+                        <h3>Mohamed Saïd El Kateb</h3>
+                        <p class="role">Palefrenier soigneur</p>
+                        <p>Responsable du bien-être des chevaux. Toujours souriant et proche des animaux.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Club Équestre - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>

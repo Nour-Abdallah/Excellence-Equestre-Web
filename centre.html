@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activités du Centre Équestre</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f5f0;
+      color: #2f2f2f;
+    }
+
+    .activites {
+      padding: 4rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #4b3f2f;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin: 1rem;
+      color: #3e3e3e;
+    }
+
+    .card p {
+      font-size: 1rem;
+      padding: 0 1rem 1.5rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="activites" id="activites">
+    <div class="container">
+      <h2 class="section-title">Découvrez Notre Centre Équestre</h2>
+      <div class="grid">
+        <div class="card">
+ 
+          <h3>Carrières Olympiques</h3>
+          <p>Deux carrières extérieures (80x60m et 70x40m) pour l'entraînement et les compétitions.</p>
+        </div>
+        <div class="card">
+          <h3>Manège Chauffé</h3>
+          <p>Un manège couvert de 60x30m, chauffé pour un confort optimal toute l'année.</p>
+        </div>
+        <div class="card">
+          
+          <h3>Parcours de Cross</h3>
+          <p>Un parcours de cross complet de 3,5 km adapté à tous les niveaux.</p>
+        </div>
+        <div class="card">
+          
+          <h3>Écuries de Luxe</h3>
+          <p>Boxes individuels, sellerie haut de gamme, douche chevaux et aire de pansage.</p>
+        </div>
+        <div class="card">
+          
+          <h3>Espaces Cavaliers</h3>
+          <p>Salle de cours et de détente pour le confort et la formation des cavaliers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

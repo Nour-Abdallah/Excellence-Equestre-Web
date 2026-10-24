@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activités Équestres | Centre Les Crins d'Or</title>
+    <style>
+        :root {
+            --primary: #D4B483;
+            --secondary: #e9c46a;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a3a5a);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .activity-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .activity-content {
+            padding: 20px;
+        }
+        
+        .activity-title {
+            font-size: 1.4rem;
+            margin: 0 0 10px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .activity-description {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .activity-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .detail-item i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        .activity-level {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .beginner {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .intermediate {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .advanced {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background-color: #1a3a5a;
+        }
+        
+        .availability {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .spots {
+            font-weight: 500;
+        }
+        
+        .available {
+            color: var(--success);
+        }
+        
+        .limited {
+            color: var(--warning);
+        }
+        
+        .full {
+            color: var(--danger);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 15px auto 0;
+        }
+        
+        @media (max-width: 768px) {
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nos Activités Équestres</h1>
+            <div class="subtitle">Découvrez toutes les disciplines proposées par notre centre</div>
+        </header>
+        
+        <h2 class="section-title">Disciplines Classiques</h2>
+        
+        <div class="activities-grid">
+            <!-- Dressage -->
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('https://images.unsplash.com/photo-1553284965-e2815db2e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="activity-content">
+                    <div class="activity-level intermediate">Intermédiaire</div>
+                    <h3 class="activity-title">Dressage</h3>
+                    <p class="activity-description">L'art de faire évoluer les chevaux afin de montrer l'élégance de leurs mouvements et leur parfaite harmonie avec le cavalier.</p>
+                    
+                    <div class="activity-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-tie"></i> Abdallah Nour.
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i> 1h30
+                        </div>
+                        <div class="detail-item">
+                            <span>55</span> DT
+                          </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <span class="spots available">
+                            <i class="fas fa-check-circle"></i> Places disponibles
+                        </span>
+                    </div>
+                    
+                    <a href="#" class="btn">Réserver une séance</a>
+                </div>
+            </div>
+            
+            <!-- Saut d'obstacles -->
+            <div class="activity-card">
+                <img src="obstacle.jpeg" alt=""  >
+                <div class="activity-content">
+                    <div class="activity-level intermediate">Intermédiaire</div>
+                    <h3 class="activity-title">Saut d'obstacles</h3>
+                    <p class="activity-description">Discipline olympique qui met en scène un cavalier et son cheval sur un parcours d'obstacles à franchir.</p>
+                    
+                    <div class="activity-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-tie"></i> ElAjmi Ranim
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i> 1h30
+                        </div>
+                        <div class="detail-item">
+                            <span>55</span> DT
+                          </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <span class="spots available">
+                            <i class="fas fa-check-circle"></i> Places disponibles
+                        </span>
+                    </div>
+                    
+                    <a href="#" class="btn">Réserver une séance</a>
+                </div>
+            </div>
+            
+            <!-- Initiation -->
+            <div class="activity-card">
+                <img src="initialion.jpeg" alt=""  >
+                <div class="activity-content">
+                    <div class="activity-level beginner">Débutant</div>
+                    <h3 class="activity-title">Initiation à l'équitation</h3>
+                    <p class="activity-description">Séance découverte pour les débutants. Apprenez les bases de l'équitation dans un environnement sécurisé et bienveillant.</p>
+                    
+                    <div class="activity-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-tie"></i> Badraoui Eya 
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i> 1h30
+                        </div>
+                        <div class="detail-item">
+                            <span>45</span> DT
+                          </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <span class="spots limited">
+                            <i class="fas fa-exclamation-circle"></i> 2 places restantes
+                        </span>
+                    </div>
+                    
+                    <a href="#" class="btn">Réserver une séance</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Autres Disciplines</h2>
+        
+        <div class="activities-grid">
+            <!-- Balade dans plage-->
+            <div class="activity-card">
+                <img src="plagee.jpg" alt=""  >
+                <div class="activity-content">
+                    <div class="activity-level beginner">Tous niveaux</div>
+                    <h3 class="activity-title">Balade dans plage</h3>
+                    <p class="activity-description">Évasion au rythme des vagues et de la brise marine.
+                        Une promenade à cheval les pieds dans l’eau, idéale pour se détendre et profiter du littoral en toute sécurité.</p>
+                    
+                    <div class="activity-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-tie"></i> Badraoui Eya 
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i> 2h00
+                        </div>
+                        <div class="detail-item">
+                            <span>35</span> DT
+                          </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <span class="spots available">
+                            <i class="fas fa-check-circle"></i> Places disponibles
+                        </span>
+                    </div>
+                    
+                    <a href="#" class="btn">Réserver une séance</a>
+                </div>
+            </div>
+            
+            <!-- Poney Club -->
+            <div class="activity-card">
+                <div class="activity-content">
+                    <img src="ecole.jpg">
+                    <div class="activity-level beginner">Enfants</div>
+                    <h3 class="activity-title">Poney Club</h3>
+                    <p class="activity-description">Activités spécialement conçues pour les enfants de 4 à 12 ans. Approche ludique de l'équitation avec nos poneys dociles.</p>
+                    
+                    <div class="activity-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-tie"></i> ElAjmi Ranim.
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i> 1h00
+                        </div>
+                        <div class="detail-item">
+                            <span>25</span> DT
+                          </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <span class="spots limited">
+                            <i class="fas fa-exclamation-circle"></i> 3 places restantes
+                        </span>
+                    </div>
+                    
+                    <a href="#" class="btn">Réserver une séance</a>
+                </div>
+            </div>
+            
+            <!-- Perfectionnement -->
+            <div class="activity-card">
+
+                <div class="activity-content">
+                    <img src="balades1.jpeg" alt="">
+                    <div class="activity-level advanced">Avancé</div>
+                    <h3 class="activity-title">Perfectionnement</h3>
+                    <p class="activity-description">Pour cavaliers confirmés souhaitant améliorer leur technique et leur relation avec le cheval. Coaching personnalisé.</p>
+                    
+                    <div class="activity-details">
+                        <div class="detail-item">
+                            <i class="fas fa-user-tie"></i> Abdallah Nour.
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i> 2h00
+                        </div>
+                        <div class="detail-item">
+                            <span>45</span> DT
+                          </div>
+                    </div>
+                    
+                    <div class="availability">
+                        <span class="spots full">
+                            <i class="fas fa-times-circle"></i> Complet
+                        </span>
+                    </div>
+                    
+                    <a href="#" class="btn">S'inscrire en liste d'attente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

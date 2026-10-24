@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À dos de rêve - Nos Installations</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8b5a2b;
+            --secondary-color: #d4a76a;
+            --accent-color: #5d8b2f;
+            --light-color: #f8f1e5;
+            --dark-color: #333333;
+            --text-color: #4a4a4a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Section Styles */
+        .installations {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .installations-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .installations-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .installations-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .installations-header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .facility-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .facility-image {
+            height: 200px;
+            background-color: var(--secondary-color);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .facility-content {
+            padding: 25px;
+        }
+        
+        .facility-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .facility-content ul {
+            list-style-type: none;
+        }
+        
+        .facility-content li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .facility-content li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .installations-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="installations">
+        <div class="installations-header">
+            <h1>Nos Installations</h1>
+            <p>Notre centre est équipé d'infrastructures équestres modernes pour garantir un confort optimal à nos cavaliers et chevaux :</p>
+        </div>
+        
+        <div class="facilities-grid">
+            <div class="facility-card">
+                <div class="facility-image" style="background-image: url('https://images.unsplash.com/photo-1553284965-e2815db2e5a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="facility-content">
+                    <h3>Carrières Olympiques</h3>
+                    <ul>
+                        <li>2 carrières de dimensions professionnelles</li>
+                        <li>80x60m et 70x40m</li>
+                        <li>Sol amortissant pour le confort des chevaux</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <img src="manage.jpg" alt="Paysage équestre" class="gallery-img">         
+                   <div class="facility-content">
+                    <h3>Manège Couvert</h3>
+                    <ul>
+                        <li>Manège de 60x30m</li>
+                        <li>Toiture isolée et éclairage professionnel</li>
+                        <li>Disponible par tous les temps</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <img src="parcour.jpg" alt="Paysage équestre" class="gallery-img">     
+                <div class="facility-content">
+                    <h3>Parcours de Cross</h3>
+                    <ul>
+                        <li>Parcours de 3,5 km à travers notre domaine</li>
+                        <li>20 obstacles naturels et artificiels</li>
+                        <li>Niveaux de difficulté variés</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <img src="net.jpg" alt="Paysage équestre" class="gallery-img">     
+                <div class="facility-content">
+                    <h3>Écuries de Luxe</h3>
+                    <ul>
+                        <li>Boxes individuels spacieux</li>
+                        <li>Ventilation naturelle optimale</li>
+                        <li>Nettoyage automatique</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <img src="psc.jpg" alt="Paysage équestre" class="gallery-img">     
+                <div class="facility-content">
+                    <h3>Services Équins</h3>
+                    <ul>
+                        <li>Selleries équipées</li>
+                        <li>Douches pour chevaux</li>
+                        <li>Solarium thérapeutique</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="facility-card">
+                <img src="detente.jpg" alt="Paysage équestre" class="gallery-img">     
+
+                <div class="facility-content">
+                    <h3>Espace Détente</h3>
+                    <ul>
+                        <li>Club-house convivial</li>
+                        <li>Espace détente avec terrasse</li>
+                        <li>Vue sur les carrières</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>© 2025 À dos de rêve - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

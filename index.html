@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centre Équestre d'Excellence - École d'équitation professionnelle avec installations haut de gamme">
+    <title>🌿À dos de rêve | Centre de Formation Professionnelle</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="main.js" as="script">
+    <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Favicon & Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="3.jpg">
+    <link rel="icon" type="3.jpg" sizes="32x32" href="3.png">
+    <link rel="icon" type="logo12.jpg" sizes="16x16" href="logo12.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p><i class="fas fa-trophy"></i> Championnat National 2023 : Nos cavaliers qualifiés ! <a href="#" class="announcement-link">Voir les résultats</a></p>
+            <div class="announcement-controls">
+                <button class="announcement-close" aria-label="Fermer la bannière">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-grid">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="index.html" class="logo">
+                        <img src="logo2.jpg" alt="Manoir Équestre" width="95" height="40">
+                        <span class="sr-only">À dos de rêve</span>
+                    </a>
+                </div>
+                
+                <!-- Main Navigation -->
+                <nav class="main-nav" aria-label="Navigation principale">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link active"><span>Accueil</span></a></li>
+                        <li class="nav-item dropdown">
+                            <a href="centre.html" class="nav-link"><span>Le Centre</span> <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="equipe.html">Notre Équipe</a>
+                                <a href="installations.html">Nos Installations</a>
+                                <a href="valeurs.html">Nos Valeurs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="activites.html" class="nav-link"><span>Activités</span> <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="cours.html">Cours & Stages</a>
+                                <a href="competition.html">Compétition</a>
+                                <a href="balades.html">Balades Équestres</a>
+                                <a href="evenements.html">Événements</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="galerie.html" class="nav-link"><span>Galerie</span></a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link"><span>Contact</span></a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <a href="reservation.html" class="btn btn-primary btn-reservation">
+                        <i class="fas fa-calendar-alt"></i> Réservation
+                    </a>
+                    <button class="mobile-nav-toggle" aria-label="Menu mobile" aria-expanded="false">
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+        <div class="hero-media">
+            <picture>
+                <source media="(max-width: 767px)" srcset="9.jpg">
+                <source media="(min-width: 768px)" srcset="12.jpg">
+                <img src="10.jpg" alt="">
+            </picture>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 id="hero-heading">Notre Excellence Équestre, À dos de rêve<span>depuis 2000</span></h1>
+                    <p class="hero-subtitle">"Reconnu par la FTE, distingué par le Label Qualité Or, et fort de 20 ans d'excellence équestre."</p>
+                    <div class="hero-cta">
+                        <a href="reservation.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-calendar-check"></i> Réserver une séance
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-phone-alt"></i> Nous contacter
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="feature-card">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <span class="feature-value">25 ans</span>
+                            <span class="feature-label">d'expérience</span>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-horse-head"></i>
+                        <div>
+                            <span class="feature-value">42</span>
+                            <span class="feature-label">chevaux</span>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-user-tie"></i>
+                        <div>
+                            <span class="feature-value">8</span>
+                            <span class="feature-label">moniteurs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <a href="#next-section" class="scroll-down" aria-label="Défiler vers le bas">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Section -->
+        <section id="next-section" class="about-section section-padding" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Bienvenue À dos de rêve </span>
+                    <h2 id="about-heading">Un centre d'exception pour une passion d'excellence</h2>
+                    <div class="section-divider">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-horse-head"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p class="lead">Fondée en 2000 par Nour Abdallah, champion de saut d'obstacles, le dos de réve s'est imposé comme l'une des références nationales en matière de formation équestre.</p>
+                        
+                        <p>Notre centre, situé au cœur d'un domaine de 50 hectares, allie infrastructures modernes et respect des traditions équestres. Nous accueillons chaque année plus de 30 cavaliers, du débutant au compétiteur de haut niveau.</p>
+                        
+                        <ul class="feature-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>2 carrières olympiques (80x60m et 70x40m)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>1 manège couvert chauffé (60x30m)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Parcours de cross de 3,5km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Écuries de luxe avec boxes individuels</span>
+                            </li>
+                        </ul>
+                        
+                    
+                    </div>
+                    
+                    <div class="about-media">
+                        <div class="media-container">
+                            <img src="images chev.jpg" alt="Installations du Manoir Équestre" class="main-image" loading="lazy">
+                            <div class="badge-container">
+                                <div class="certification-badge">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section section-padding bg-light" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Nos Prestations</span>
+                    <h2 id="services-heading">Une offre complète pour tous les niveaux</h2>
+                    <div class="section-divider">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-horse-head"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p class="section-description">Découvrez nos différentes activités adaptées à chaque profil, de l'initiation au perfectionnement.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 class="service-title">Formation Classique</h3>
+                        <p class="service-description">Apprentissage progressif des techniques équestres selon les méthodes de l'École Tunisie.</p>
+                        <ul class="service-features">
+                            <li>Dressage</li>
+                            <li>Obstacle</li>
+                            <li>Équitation d'extérieur</li>
+                        </ul>
+                        
+                    </article>
+                    
+                    <!-- Service 2 -->
+                    <article class="service-card featured">
+                        <div class="service-badge">Plus populaire</div>
+                        <div class="service-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="service-title">Préparation Compétition</h3>
+                        <p class="service-description">Programme intensif pour cavaliers confirmés visant les compétitions régionales et nationales.</p>
+                        <ul class="service-features">
+                            <li>Analyse vidéo</li>
+                            <li>Préparation physique</li>
+                            <li>Coaching personnalisé</li>
+                        </ul>
+                      
+                    </article>
+                    
+                    <!-- Service 3 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3 class="service-title">École Poney</h3>
+                        <p class="service-description">Initiation ludique pour les enfants de 4 à 12 ans avec notre équipe spécialisée.</p>
+                        <ul class="service-features">
+                            <li>Baby-poney dès 4 ans</li>
+                            <li>Pédagogie Montessori</li>
+                            <li>Passage des galops</li>
+                        </ul>
+                       
+                    </article>
+                    
+                    <!-- Service 4 -->
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-horse"></i>
+                        </div>
+                        <h3 class="service-title">Balades & Randonnées</h3>
+                        <p class="service-description">Découverte de la région au rythme du cheval, pour tous niveaux.</p>
+                        <ul class="service-features">
+                            <li>Circuits adaptés</li>
+                            <li>Guide diplômé</li>
+                            <li>De 1h à la journée</li>
+                        </ul>
+                        
+                    </article>
+                </div>
+                
+                <div class="section-cta">
+                    <a href="activites.html" class="btn btn-primary">
+                        Voir toutes nos activités <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Booking Widget -->
+        <section class="booking-section section-padding bg-dark" aria-labelledby="booking-heading">
+            <div class="container">
+                <div class="booking-grid">
+                    <div class="booking-content">
+                        <span class="section-subtitle">Réservez en ligne</span>
+                        <h2 id="booking-heading">Planifiez votre séance en quelques clics</h2>
+                        <p class="booking-description">Notre système de réservation en temps réel vous permet de choisir votre créneau, votre moniteur et même votre monture préférée.</p>
+                        
+                        <ul class="booking-features">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Annulation gratuite jusqu'à 48h avant</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Paiement sécurisé en ligne</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span>Confirmation immédiate</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="booking-widget">
+                        <div class="widget-header">
+                            <h3>Disponibilités</h3>
+                            <p>Prochains créneaux disponibles</p>
+                        </div>
+                        
+                        <div class="widget-content">
+                            <div class="date-selector">
+                                <button class="date-arrow" aria-label="Semaine précédente">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <div class="date-display">Lun 12 Juin - Dim 18 Juin 2023</div>
+                                <button class="date-arrow" aria-label="Semaine suivante">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="time-slots">
+                                <!-- Slot 1 -->
+                                <div class="time-slot available">
+                                    <div class="slot-details">
+                                        <span class="slot-time">09:00 - 10:30</span>
+                                        <span class="slot-type">Dressage</span>
+                                        <span class="slot-monitor">Avec Sophie M.</span>
+                                    </div>
+                                    <button class="btn btn-small">Réserver</button>
+                                </div>
+                                
+                                <!-- Slot 2 -->
+                                <div class="time-slot available">
+                                    <div class="slot-details">
+                                        <span class="slot-time">11:00 - 12:30</span>
+                                        <span class="slot-type">Saut d'obstacles</span>
+                                        <span class="slot-monitor">Avec Jean-Luc D.</span>
+                                    </div>
+                                    <button class="btn btn-small">Réserver</button>
+                                </div>
+                                
+                                <!-- Slot 3 -->
+                                <div class="time-slot limited">
+                                    <div class="slot-details">
+                                        <span class="slot-time">14:00 - 15:30</span>
+                                        <span class="slot-type">Initiation</span>
+                                        <span class="slot-monitor">Avec Marie T.</span>
+                                        <span class="slot-warning">2 places restantes</span>
+                                    </div>
+                                    <button class="btn btn-small">Réserver</button>
+                                </div>
+                                
+                                <!-- Slot 4 -->
+                                <div class="time-slot full">
+                                    <div class="slot-details">
+                                        <span class="slot-time">16:00 - 17:30</span>
+                                        <span class="slot-type">Perfectionnement</span>
+                                        <span class="slot-monitor">Avec Pierre L.</span>
+                                        <span class="slot-warning">Complet</span>
+                                    </div>
+                                    <button class="btn btn-small" disabled>Complet</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="widget-footer">
+                            <a href="reservation.html" class="btn btn-primary btn-block">
+                                Voir tous les créneaux <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Preview Section -->
+        <section class="team-section section-padding" aria-labelledby="team-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Notre Équipe</span>
+                    <h2 id="team-heading">Des professionnels passionnés</h2>
+                    <div class="section-divider">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-horse-head"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p class="section-description">Nos 8 moniteurs diplômés d'État vous accompagnent avec expertise et bienveillance.</p>
+                </div>
+                
+                <div class="team-grid">
+                    <!-- Member 1 -->
+                    <article class="team-card">
+                        <div class="team-image">
+                            <img src="habib.jpg" alt="Habib Ammar" loading="lazy">
+                            <div class="team-overlay">
+                                <ul class="team-social">
+                                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Habib Ammar</h3>
+                            <p class="team-title">Directeur technique • BEES 2°</p>
+                            <div class="team-bio">
+                                <p>Ancien champion de Tunisie de saut d'obstacles, Habib Ammar a fondé le A dos de reve en 2000.</p>
+                            </div>
+                            <div class="team-cta">
+                                <a href="equipe.html#jean-luc" class="btn btn-text">
+                                    Profil complet <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Member 2 -->
+                    <article class="team-card">
+                        <div class="team-image">
+                            <img src="slah.jpg" alt="M. Slaheddine Bali" loading="lazy">
+                            <div class="team-overlay">
+                                <ul class="team-social">
+                                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">M. Slaheddine Bali </h3>
+                            <p class="team-title"> Ministre de la Défense • BEES 1°</p>
+                            <div class="team-bio">
+                                <p>Spécialiste du défense , Slaheddine a formé plusieurs champions régionaux.</p>
+                            </div>
+                            <div class="team-cta">
+                                <a href="equipe.html#slah" class="btn btn-text">
+                                    Profil complet <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Member 3 -->
+                    <article class="team-card">
+                        <div class="team-image">
+                            <img src="mphamed.jpg" alt="Pierre Lambert" loading="lazy">
+                            <div class="team-overlay">
+                                <ul class="team-social">
+                                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3 class="team-name">Mohamed Saïd El Kateb</h3>
+                            <p class="team-title">Moniteur cross </p>
+                            <div class="team-bio">
+                                <p>Ancien membre de l'équipe de Tunisie junior de concours complet.</p>
+                            </div>
+                            <div class="team-cta">
+                                <a href="equipe.html#pierre" class="btn btn-text">
+                                    Profil complet <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="section-cta">
+                    <a href="equipe.html" class="btn btn-secondary">
+                        Rencontrer toute l'équipe <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials-section section-padding bg-light" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Ils nous font confiance</span>
+                    <h2 id="testimonials-heading">Témoignages</h2>
+                    <div class="section-divider">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-horse-head"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                </div>
+                
+                <div class="testimonials-slider">
+                   
+                  
+                    
+                    <!-- Testimonial 3 -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <p>Après avoir essayé plusieurs centres, je peux affirmer que le centre A dos de réve se distingue par son professionnalisme et la qualité de ses chevaux. Un must pour tout cavalier sérieux.</p>
+                        </blockquote>
+                        <div class="testimonial-author">
+                        </div>
+                    </article>
+
+                    
+                </div>
+                
+                <div class="testimonials-cta">
+                    <a href="#" class="btn btn-text">
+                        <i class="fab fa-google"></i> Lire tous les avis Google
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Horses Preview Section -->
+        <section class="horses-section section-padding" aria-labelledby="horses-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Nos partenaires équins</span>
+                    <h2 id="horses-heading">Découvrez nos chevaux</h2>
+                    <div class="section-divider">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-horse-head"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p class="section-description">Notre cavalerie de 42 chevaux soigneusement sélectionnés pour leur tempérament et leurs qualités.</p>
+                </div>
+                
+                <div class="horses-grid">
+                    <!-- Horse 1 -->
+                    <article class="horse-card">
+                        <div class="horse-image">
+                            <img src="https://th.bing.com/th/id/OIP.UeIXnwa4F-06sbQl2I5wIwHaE8?w=1024&h=683&rs=1&pid=ImgDetMain" alt="Quelqu'un du Ponthieu" loading="lazy">
+                            <div class="horse-badge dressage">Dressage</div>
+                        </div>
+                        <div class="horse-info">
+                            <h3 class="horse-name">Quelqu'un du Ponthieu</h3>
+                            <p class="horse-details">Selle Français • 12 ans • 1,68m</p>
+                            <div class="horse-description">
+                                <p>Étalon au tempérament calme, idéal pour le travail de dressage de haut niveau.</p>
+                            </div>
+                            <div class="horse-cta">
+                                <a href="chevaux.html#quelquun" class="btn btn-text">
+                                    Voir son profil <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Horse 2 -->
+                    <article class="horse-card">
+                        <div class="horse-image">
+                            <img src="https://th.bing.com/th/id/OIP.pRGYxAd57yjwpcp7Gj-1-gHaER?rs=1&pid=ImgDetMain" alt="Jolie Coeur" loading="lazy">
+                            <div class="horse-badge obstacle">Obstacle</div>
+                        </div>
+                        <div class="horse-info">
+                            <h3 class="horse-name">Jolie Coeur</h3>
+                            <p class="horse-details">Anglo-Arabe • 9 ans • 1,65m</p>
+                            <div class="horse-description">
+                                <p>Jument énergique et généreuse, parfaite pour les cavaliers de compétition.</p>
+                            </div>
+                            <div class="horse-cta">
+                                <a href="chevaux.html#jolie" class="btn btn-text">
+                                    Voir son profil <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Horse 3 -->
+                    <article class="horse-card">
+                        <div class="horse-image">
+                            <img src="https://th.bing.com/th/id/OIP.A23Vn0gxslqqusbeTo9SMQHaE7?rs=1&pid=ImgDetMain" alt="Petit Prince" loading="lazy">
+                            <div class="horse-badge initiation">Initiation</div>
+                        </div>
+                        <div class="horse-info">
+                            <h3 class="horse-name">Petit Prince</h3>
+                            <p class="horse-details">Poney Français • 14 ans • 1,48m</p>
+                            <div class="horse-description">
+                                <p>Poney extrêmement patient, idéal pour les enfants et les débutants adultes.</p>
+                            </div>
+                            <div class="horse-cta">
+                                <a href="chevaux.html#prince" class="btn btn-text">
+                                    Voir son profil <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Horse 4 -->
+                        <article class="horse-card">
+                            <div class="horse-image">
+                                <img src="sauvage.jpg" alt=" Chevaux redevenus sauvages">
+                                <div class="horse-badge obstacle">Obstacle</div>
+                            </div>
+                            <div class="horse-info">
+                                <h3 class="horse-name"> Chevaux redevenus sauvages</h3>
+                                <p class="horse-details">chevaux-sauvages • 9 ans • 1,65m</p>
+                                <div class="horse-description">
+                                    <p>Étalon explosif avec des antécédents en compétition internationale. Exceptionnel en parcours de saut d'obstacles .</p>
+                                  
+                                </div>
+                                <div class="horse-cta">
+                                    <a href="chevaux.html#prince" class="btn btn-text">
+                                        Voir son profil <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                     
+                </div>
+                
+            
+            </div>
+        </section>
+        
+        <!-- Partners Section -->
+        <section class="partners-section section-padding bg-dark" aria-labelledby="partners-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Nos partenaires</span>
+                    <h2 id="partners-heading">Ils nous soutiennent</h2>
+                    <div class="section-divider">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-horse-head"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                </div>
+                
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <img src="FFE.png" alt="Fédération Française d'Équitation" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2024/04/Decathlon-Logo-New.png" alt="Decathlon" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="HARAS.png" alt="Haras Nationaux" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="cavalls.png" alt="Cavadeos" loading="lazy">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="ch.png" alt="Gallop" loading="lazy" height="100"width="100">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact CTA Section -->
+        <section class="contact-cta-section section-padding" aria-labelledby="contact-cta-heading">
+            <div class="container">
+                <div class="cta-grid">
+                    <div class="cta-content">
+                        <h2 id="contact-cta-heading">Vous avez des questions ?</h2>
+                        <p class="cta-text">Notre équipe est à votre disposition pour répondre à toutes vos interrogations et vous conseiller au mieux.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <span class="method-label">Téléphone</span>
+                                    <a href="tel:+216 55 555 555" class="method-value">+216 55 555 555</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span class="method-label">Email</span>
+                                    <a href="mailto:contact@manoirequestre.fr" class="method-value">a_dos_de_reve@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="method-label">Adresse</span>
+                                    <address class="method-value"> Rue de l'Indépendance, 5000 Monastir</address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-form">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <select id="subject" required>
+                                    <option value="" disabled selected>Sélectionnez un sujet</option>
+                                    <option value="info">Demande d'information</option>
+                                    <option value="booking">Réservation</option>
+                                    <option value="partnership">Partenariat</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Envoyer le message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 class="footer-title">A dos de reve</h3>
+                        <p class="footer-about">Centre de formation équestre d'excellence depuis 2000. Label Or F.T.S.E.T.. Membre de la Fédération Française d'Équitation.</p>
+                        
+                        <div class="footer-newsletter">
+                            <h4>Newsletter</h4>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Votre email" required>
+                                <button type="submit" class="btn btn-small">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 class="footer-title">Horaires</h3>
+                        <ul class="footer-hours">
+                            <li>
+                                <span>Lundi - Vendredi</span>
+                                <span>9h - 19h</span>
+                            </li>
+                            <li>
+                                <span>Samedi</span>
+                                <span>8h - 20h</span>
+                            </li>
+                            <li>
+                                <span>Dimanche</span>
+                                <span>9h - 18h</span>
+                            </li>
+                            <li>
+                                <span>Jours fériés</span>
+                                <span>Sur rendez-vous</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 class="footer-title">Liens utiles</h3>
+                        <ul class="footer-links">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="tarifs.html">Tarifs</a></li>
+                            <li><a href="reglement.html">Règlement intérieur</a></li>
+                            <li><a href="mentions-legales.html">Mentions légales</a></li>
+                            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 class="footer-title">Nous suivre</h3>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="footer-payment">
+                            <h4>Modes de paiement</h4>
+                            <div class="payment-methods">
+                                <i class="fab fa-cc-visa" title="Visa"></i>
+                                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                                <i class="fab fa-cc-amex" title="American Express"></i>
+                                <i class="fas fa-university" title="Virement"></i>
+                                <i class="fas fa-money-bill-wave" title="Espèces"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2025 A dos de réve  . Tous droits réservés.</p>
+                    
+                    <div class="footer-badges">
+                        <img src="(.jpg" alt="Label F.T.S.E.T." width="60" height="60" loading="lazy">
+                        <img src="logo12.jpg" alt="Qualité Tourisme" width="60" height="60" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EquestrianCenter",
+      "name": "Manoir Équestre",
+      "image": "https://www.manoirequestre.fr/images/logo.svg",
+      "@id": "https://www.manoirequestre.fr",
+      "url": "https://www.manoirequestre.fr",
+      "telephone": "+33123456789",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Route des Écuries",
+        "addressLocality": "Louveciennes",
+        "postalCode": "78430",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8615,
+        "longitude": 2.1143
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/A_dos_de_réve",
+        "https://www.instagram.com/A_dos_de_réve",
+        "https://www.youtube.com/channel/A_dos_de_réve"
+      ]
+    }
+    </script>
+</body>
+</html>
